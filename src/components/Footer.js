@@ -4,13 +4,13 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   }));
 
-const Header = () => {
+const Footer = () => {
     const classes = useStyles();
 
     return (
-        <BottomNavigation className={classes.appBar}>
+        <BottomNavigation>
         </BottomNavigation>
     );
 }
 
-export default Header;
+export default Footer;

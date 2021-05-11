@@ -1,13 +1,26 @@
+import { Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../src/components/Layout';
+import Services from '../src/components/Services';
+import Blog from '../src/components/Blog';
 import fetch from 'isomorphic-unfetch';
 
-function Index(props) {
+const useStyles = makeStyles((theme) => ({
+  container: {
+    margin: '0 auto',
+    maxWidth: '1200px',
+  },
+}));
+
+const Index = ({ posts }) => {
+  const classes = useStyles();
+
   return (
-    <Layout>
-    <h1>Posts</h1>
-    <div>
-      {JSON.stringify(props.posts)}
-    </div>
+  <Layout>
+    <Grid className={classes.container} component="main">
+      <Services />
+      <Blog posts={posts} />
+    </Grid>
   </Layout>
   );
 }

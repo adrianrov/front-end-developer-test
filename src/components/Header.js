@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     toolbar: {
         alignSelf: 'flex-end',
         height: '100%',
-        maxWidth: '1230px',
+        maxWidth: '1200px',
     },
   }));
 
