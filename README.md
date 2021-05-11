@@ -13,3 +13,6 @@ Hello prospective team member!  We would like to see your HTML/CSS chops.  We ha
  We would like to see SEO friendly markup, and file sizes that have site performance in mind.
  
  Good Luck!
+
+ ## Author
+   Adrian Rodriguez <adrian.rov@gmail.com>
