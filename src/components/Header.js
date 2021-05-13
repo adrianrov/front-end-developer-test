@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   active: {
     borderBottom: "5px solid",
     borderBottomColor: theme.palette.secondary.main,
+    boxSizing: "border-box",
     margin: 0,
     padding: "8px 0",
   },
@@ -42,18 +43,20 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   inactive: {
+    borderBottom: "5px solid transparent",
+    boxSizing: "border-box",
     margin: 0,
     padding: "8px 0",
   },
   item: {
     boxSizing: "border-box",
     color: theme.palette.primary.main,
-    fontSize: "0.625rem",
+    fontSize: "1rem",
     textTransform: "uppercase",
   },
   link: {
     boxSizing: "border-box",
-    fontSize: "0.625rem",
+    fontSize: "1rem",
     padding: "0 18px",
     textTransform: "uppercase",
   },
@@ -64,11 +67,11 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     ...theme.typography.logo,
-    fontSize: "2.375rem",
+    fontSize: "4rem",
   },
   menu: {
     color: theme.palette.primary.main,
-    fontSize: "2.375rem",
+    fontSize: "3rem",
     height: "100%",
     position: "absolute",
     right: "15px",

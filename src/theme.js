@@ -15,6 +15,7 @@ const theme = createMuiTheme({
       main: white,
     },
     secondary: {
+      dark: gray,
       main: beige,
     },
     background: {
@@ -27,6 +28,22 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: "Raleway, Arial",
+    subtitle1: {
+      fontSize: "1.4rem",
+    },
+    h1: {
+      fontFamily: "Open Sans, Arial",
+    },
+    h2: {
+      fontFamily: "Open Sans, Arial",
+      fontSize: "3.35rem",
+      fontWeight: 600,
+    },
+    h3: {
+      fontFamily: "Open Sans, Arial",
+      fontSize: "2rem",
+      fontWeight: 600,
+    },
     logo: {
       fontFamily: "Oleo Script, cursive",
     },
