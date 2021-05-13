@@ -1,0 +1,28 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": ["airbnb", "prettier"],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": ["react"],
+    "settings": {
+        "import/extensions": [".js", ".json", ".css"],
+        "import/ignore": ["node_modules"]
+    },
+    "rules": {
+        // Supported within this version of React
+        "react/react-in-jsx-scope": "off",
+        // Using .js to jsx containing files
+        "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+        // Disabling no spreading
+        "react/jsx-props-no-spreading": "off"
+    }
+}
