@@ -1,51 +1,156 @@
-import { AppBar, Link, Toolbar } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { useEffect, useState } from "react";
+import {
+  AppBar,
+  Box,
+  Button,
+  Link,
+  List,
+  ListItem,
+  ListItemText,
+  SwipeableDrawer,
+  Toolbar,
+} from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const useStyles = makeStyles((theme) => ({
-    appBar: {
-        backgroundColor: '#303030',
-        display: 'flex',
-        height: '95px',
-        justifyContent: 'center',
-        position: 'static',
+  active: {
+    borderBottom: "5px solid",
+    borderBottomColor: theme.palette.secondary.main,
+    margin: 0,
+    padding: "8px 0",
+  },
+  appBar: {
+    backgroundColor: theme.palette.background.gray,
+    display: "flex",
+    height: "95px",
+    justifyContent: "center",
+    position: "static",
+  },
+  container: {
+    alignItems: "center",
+    display: "flex",
+    justifyContent: "center",
+    maxWidth: "1230px",
+    margin: "0 auto",
+    padding: "0 30px",
+    position: "relative",
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      justifyContent: "flex-start",
     },
-    link: {
-        marginRight: '30px',
-    },
-    toolbar: {
-        alignSelf: 'flex-end',
-        height: '100%',
-        maxWidth: '1200px',
-    },
-  }));
+  },
+  inactive: {
+    margin: 0,
+    padding: "8px 0",
+  },
+  item: {
+    boxSizing: "border-box",
+    color: theme.palette.primary.main,
+    fontSize: "0.625rem",
+    textTransform: "uppercase",
+  },
+  link: {
+    boxSizing: "border-box",
+    fontSize: "0.625rem",
+    padding: "0 18px",
+    textTransform: "uppercase",
+  },
+  list: {
+    backgroundColor: theme.palette.background.gray,
+    height: "100%",
+    width: "255px",
+  },
+  logo: {
+    ...theme.typography.logo,
+    fontSize: "2.375rem",
+  },
+  menu: {
+    color: theme.palette.primary.main,
+    fontSize: "2.375rem",
+    height: "100%",
+    position: "absolute",
+    right: "15px",
+  },
+  toolbar: {
+    flexGrow: 1,
+    justifyContent: "flex-end",
+    height: "100%",
+    padding: 0,
+  },
+}));
+
+const options = ["Home", "About", "Portfolios", "Team", "Blog", "Contact"];
 
 const Header = () => {
-    const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(theme);
+  const isMediumDisplay = useMediaQuery(theme.breakpoints.up("md"));
+  const [isOpen, setIsOpen] = useState(false);
+  const closeDrawer = () => setIsOpen(false);
+  const openDrawer = () => setIsOpen(true);
 
-    return (
-        <AppBar className={classes.appBar}>
-            <Toolbar className={classes.toolbar}>
-                <Link href="#" className={classes.link}>
-                    Home
-                </Link>
-                <Link href="#" className={classes.link}>
-                    About
-                </Link>
-                <Link href="#" className={classes.link}>
-                    Portfolios
-                </Link>
-                <Link href="#" className={classes.link}>
-                    Team
-                </Link>
-                <Link href="#" className={classes.link}>
-                    Blog
-                </Link>
-                <Link href="#" className={classes.link}>
-                    Contact
-                </Link>
-            </Toolbar>
-        </AppBar>
-    );
-}
+  useEffect(() => {
+    if (isMediumDisplay) {
+      closeDrawer();
+    }
+  }, [isMediumDisplay]);
+
+  return (
+    <AppBar className={classes.appBar} component="nav">
+      <Box className={classes.container}>
+        <Link className={classes.logo} href="/">
+          Mairala
+        </Link>
+        {isMediumDisplay ? (
+          <Toolbar className={classes.toolbar}>
+            {options.map((text) => (
+              <Link key={text} href="/" className={classes.link}>
+                <div
+                  className={
+                    text === "Home" ? classes.active : classes.inactive
+                  }
+                >
+                  {text}
+                </div>
+              </Link>
+            ))}
+          </Toolbar>
+        ) : (
+          <>
+            <Button className={classes.menu} onClick={openDrawer}>
+              <FontAwesomeIcon icon="bars" />
+            </Button>
+            <SwipeableDrawer
+              anchor="right"
+              open={isOpen}
+              onClose={closeDrawer}
+              onOpen={openDrawer}
+            >
+              <List className={classes.list}>
+                {options.map((text) => (
+                  <ListItem
+                    key={text}
+                    href="/"
+                    className={classes.item}
+                    component="a"
+                  >
+                    <ListItemText
+                      className={
+                        text === "Home" ? classes.active : classes.inactive
+                      }
+                      primary={text}
+                    />
+                  </ListItem>
+                ))}
+              </List>
+            </SwipeableDrawer>
+          </>
+        )}
+      </Box>
+    </AppBar>
+  );
+};
 
 export default Header;
