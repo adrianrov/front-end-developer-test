@@ -28,6 +28,11 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: "Raleway, Arial",
+    caption: {
+      fontFamily: "Open Sans, Arial",
+      fontSize: "1.4rem",
+      fontWeight: 300,
+    },
     subtitle1: {
       fontSize: "1.4rem",
     },
