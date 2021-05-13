@@ -5,6 +5,7 @@ import {
   gray,
   grayDark,
   grayDarkest,
+  grayLight,
   white,
 } from "./utils/colors";
 
@@ -17,6 +18,7 @@ const theme = createMuiTheme({
     secondary: {
       dark: gray,
       main: beige,
+      light: grayLight,
     },
     background: {
       dark: black,
