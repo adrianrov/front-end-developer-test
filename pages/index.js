@@ -6,6 +6,7 @@ import Layout from "../src/components/Layout";
 import Marquee from "../src/components/Marquee";
 import Services from "../src/components/Services";
 import Blog from "../src/components/Blog";
+import Contact from "../src/components/Contact";
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -23,6 +24,7 @@ const Index = ({ posts }) => {
         <Marquee />
         <Services />
         <Blog posts={posts} />
+        <Contact />
       </Grid>
     </Layout>
   );
