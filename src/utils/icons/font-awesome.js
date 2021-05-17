@@ -4,9 +4,10 @@ import {
   faBars,
   faBullhorn,
   faFlask,
+  faMapMarkerAlt,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 
 config.autoAddCss = false; // Tells FontAwesome to skip adding the CSS automatically.
 
-library.add(faBars, faBullhorn, faFlask, faUsers);
+library.add(faBars, faBullhorn, faFlask, faMapMarkerAlt, faUsers);
