@@ -3,6 +3,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
   faBars,
   faBullhorn,
+  faDownload,
   faEnvelope,
   faFlask,
   faMapMarkerAlt,
@@ -15,6 +16,7 @@ config.autoAddCss = false; // Tells FontAwesome to skip adding the CSS automatic
 library.add(
   faBars,
   faBullhorn,
+  faDownload,
   faEnvelope,
   faFlask,
   faMapMarkerAlt,

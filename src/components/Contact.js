@@ -20,7 +20,9 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   email: {
-    paddingLeft: "15px",
+    [theme.breakpoints.up("sm")]: {
+      paddingLeft: "15px",
+    },
     "& ::before": {
       borderBottom: "4px solid",
       borderColor: theme.palette.background.dark,
@@ -50,7 +52,9 @@ const useStyles = makeStyles((theme) => ({
     margin: "50px auto 30px",
   },
   name: {
-    paddingRight: "15px",
+    [theme.breakpoints.up("sm")]: {
+      paddingRight: "15px",
+    },
     "& ::before": {
       borderBottom: "4px solid",
       borderColor: theme.palette.background.dark,
@@ -67,7 +71,7 @@ const Marquee = () => {
         Contact
       </Typography>
       <Grid component="form" className={classes.form}>
-        <Grid className={classes.name} item xs={6} spacing={3}>
+        <Grid className={classes.name} item xs={12} sm={6} spacing={3}>
           <TextField
             fullWidth
             required
@@ -76,7 +80,7 @@ const Marquee = () => {
             label="Name"
           />
         </Grid>
-        <Grid className={classes.email} item xs={6} spacing={3}>
+        <Grid className={classes.email} item xs={12} sm={6} spacing={3}>
           <TextField fullWidth required id="email" label="Email" />
         </Grid>
         <Grid className={classes.formValue} item xs={12}>
