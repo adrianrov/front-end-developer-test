@@ -3,11 +3,21 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
   faBars,
   faBullhorn,
+  faEnvelope,
   faFlask,
   faMapMarkerAlt,
+  faPhoneAlt,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 
 config.autoAddCss = false; // Tells FontAwesome to skip adding the CSS automatically.
 
-library.add(faBars, faBullhorn, faFlask, faMapMarkerAlt, faUsers);
+library.add(
+  faBars,
+  faBullhorn,
+  faEnvelope,
+  faFlask,
+  faMapMarkerAlt,
+  faPhoneAlt,
+  faUsers
+);

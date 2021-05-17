@@ -35,11 +35,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     maxWidth: "1230px",
     margin: "0 auto",
-    padding: "0 30px",
+    padding: "0",
     position: "relative",
     width: "100%",
     [theme.breakpoints.up("md")]: {
       justifyContent: "flex-start",
+      padding: "0 30px",
     },
   },
   inactive: {
@@ -71,10 +72,13 @@ const useStyles = makeStyles((theme) => ({
   },
   menu: {
     color: theme.palette.primary.main,
-    fontSize: "3rem",
+    fontSize: "2rem",
     height: "100%",
     position: "absolute",
-    right: "15px",
+    right: "0",
+    [theme.breakpoints.up("sm")]: {
+      right: "15px",
+    },
   },
   toolbar: {
     flexGrow: 1,

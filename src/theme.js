@@ -38,6 +38,11 @@ const theme = createMuiTheme({
     subtitle1: {
       fontSize: "1.4rem",
     },
+    subtitle2: {
+      fontFamily: "Open Sans, Arial",
+      fontSize: "1.2rem",
+      fontWeight: 300,
+    },
     h1: {
       fontFamily: "Open Sans, Arial",
     },
@@ -50,6 +55,11 @@ const theme = createMuiTheme({
       fontFamily: "Open Sans, Arial",
       fontSize: "2rem",
       fontWeight: 600,
+    },
+    h4: {
+      fontFamily: "Open Sans, Arial",
+      fontSize: "1.5rem",
+      textTransform: "uppercase",
     },
     logo: {
       fontFamily: "Oleo Script, cursive",
