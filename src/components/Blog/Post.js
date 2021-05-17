@@ -13,6 +13,10 @@ const useStyles = makeStyles(() => ({
     margin: "0 auto 50px",
     maxWidth: "1230px",
     padding: "0 30px",
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "auto",
+    },
   },
   description: {
     color: theme.palette.secondary.main,
